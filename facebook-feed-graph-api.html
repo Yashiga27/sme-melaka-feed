@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Facebook Feed</title>
+<style>
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background: #f0f2f5;
+  }
+
+  .page-header {
+    text-align: center;
+    padding: 50px 20px 20px;
+  }
+
+  .page-header h1 {
+    margin: 0 0 8px;
+    font-size: 28px;
+    color: #1c1e21;
+  }
+
+  .page-header p {
+    margin: 0;
+    color: #65676b;
+    font-size: 15px;
+  }
+
+  .feed {
+    max-width: 560px;
+    margin: 0 auto 60px;
+    padding: 0 16px;
+  }
+
+  .post-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid #eceff2;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  .post-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px 6px;
+  }
+
+  .post-head img.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .post-head .name {
+    font-weight: 600;
+    font-size: 14px;
+    color: #1c1e21;
+  }
+
+  .post-head .time {
+    font-size: 12px;
+    color: #8a8d91;
+  }
+
+  .post-text {
+    padding: 4px 16px 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #1c1e21;
+    white-space: pre-wrap;
+  }
+
+  .post-image {
+    width: 100%;
+    display: block;
+  }
+
+  .post-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 16px;
+    border-top: 1px solid #eceff2;
+  }
+
+  .post-footer a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1877f2;
+  }
+
+  .loading, .error {
+    text-align: center;
+    color: #65676b;
+    padding: 40px 0;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Latest Updates</h1>
+  <p>SME Entrepreneurship Melaka on Facebook</p>
+</div>
+
+<div class="feed" id="feed">
+  <div class="loading">Loading posts...</div>
+</div>
+
+<script>
+  // 👉 REPLACE THESE TWO VALUES
+  const PAGE_ID = "YOUR_PAGE_ID_HERE";
+  const ACCESS_TOKEN = "YOUR_PAGE_ACCESS_TOKEN_HERE";
+
+  const feedEl = document.getElementById("feed");
+
+  async function loadPosts() {
+    const fields = "message,full_picture,permalink_url,created_time,from";
+    const url = `https://graph.facebook.com/v19.0/${PAGE_ID}/posts?fields=${fields}&limit=15&access_token=${ACCESS_TOKEN}`;
+
+    try {
+      const res = await fetch(url);
+      const data = await res.json();
+
+      if (data.error) {
+        feedEl.innerHTML = `<div class="error">Couldn't load posts: ${data.error.message}</div>`;
+        return;
+      }
+
+      if (!data.data || data.data.length === 0) {
+        feedEl.innerHTML = `<div class="error">No posts found.</div>`;
+        return;
+      }
+
+      feedEl.innerHTML = "";
+      data.data.forEach(post => {
+        const card = document.createElement("div");
+        card.className = "post-card";
+
+        const timeAgo = new Date(post.created_time).toLocaleString();
+        const authorName = post.from ? post.from.name : "Page";
+
+        card.innerHTML = `
+          <div class="post-head">
+            <img class="avatar" src="https://graph.facebook.com/${PAGE_ID}/picture" alt="">
+            <div>
+              <div class="name">${authorName}</div>
+              <div class="time">${timeAgo}</div>
+            </div>
+          </div>
+          ${post.message ? `<div class="post-text">${post.message}</div>` : ""}
+          ${post.full_picture ? `<img class="post-image" src="${post.full_picture}" alt="">` : ""}
+          <div class="post-footer">
+            <a href="${post.permalink_url}" target="_blank">View on Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(post.permalink_url)}" target="_blank">Share</a>
+          </div>
+        `;
+        feedEl.appendChild(card);
+      });
+
+    } catch (err) {
+      feedEl.innerHTML = `<div class="error">Error loading feed: ${err.message}</div>`;
+    }
+  }
+
+  loadPosts();
+</script>
+
+</body>
+</html>
