@@ -1,86 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SME Entrepreneurship Melaka — Latest Updates</title>
+
+<title>SME Entrepreneurship Melaka</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
-  :root{
-    --navy:#0f2540;
-    --navy-deep:#081729;
-    --gold:#c9a24b;
-    --red:#c0392b;
-    --paper:#f6f4ef;
-    --ink:#1b2430;
-  }
-  header.top{
-    background:linear-gradient(120deg,var(--navy-deep),var(--navy) 60%);
-    color:#fff;
-    padding:38px 24px 30px;
-  }
-  .eyebrow{
-    font-size:12px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--gold);
-    font-weight:600;
-    margin-bottom:10px;
-  }
-  h1{
-    font-family:'Space Grotesk',sans-serif;
-    font-size:clamp(26px,4vw,38px);
-    margin:0 0 8px;
-    line-height:1.15;
-  }
-  header.top p{
-    max-width:560px;
-    color:#c9d2df;
+
+*{
     margin:0;
-    font-size:15px;
-    line-height:1.6;
-  }
-  main{
-    max-width:640px;
-    margin:24px auto 60px;
-    padding:0 20px;
-  }
-  main iframe{
-    width:100% !important;
-    display:block;
-    border:none;
-  }
-  footer{
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+    background:#f4f6f9;
+    color:#222;
+
+}
+
+header{
+
+    background:#0f2540;
+    color:white;
+    padding:40px 20px;
     text-align:center;
-    font-size:12px;
-    color:#5b6472;
-    padding:0 20px 30px;
-  }
+
+}
+
+header h1{
+
+    font-family:'Space Grotesk',sans-serif;
+    font-size:36px;
+
+}
+
+header p{
+
+    margin-top:10px;
+    opacity:.9;
+
+}
+
+.container{
+
+    max-width:1400px;
+    margin:40px auto;
+    display:grid;
+
+    grid-template-columns:
+    280px
+    1fr
+    280px;
+
+    gap:25px;
+
+    padding:0 20px;
+
+}
+
+.card{
+
+    background:white;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    overflow:hidden;
+
+}
+
+.card h3{
+
+    padding:15px;
+    border-bottom:1px solid #eee;
+    font-size:18px;
+
+}
+
+.card img{
+
+    width:100%;
+    display:block;
+
+}
+
+.card .content{
+
+    padding:15px;
+
+}
+
+.feed iframe{
+
+    width:100%;
+    height:1300px;
+    border:none;
+
+}
+
+footer{
+
+    text-align:center;
+    padding:30px;
+    color:#666;
+
+}
+
+@media(max-width:1000px){
+
+.container{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
 </style>
+
 </head>
+
 <body>
 
-<header class="top">
-  <div class="eyebrow">Community &amp; Enterprise</div>
-  <h1>SME Entrepreneurship Melaka</h1>
-  <p>Live updates straight from the official Facebook page — events, workshops and announcements for Melaka's SME community. Scroll the feed below to catch up.</p>
+<header>
+
+<h1>SME Entrepreneurship Melaka</h1>
+
+<p>
+Latest news, events and Facebook updates.
+</p>
+
 </header>
 
-<main>
-  <iframe
-    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fp%2FSME-Entrepreneurship-Melaka-61584066234675%2F&tabs=timeline&width=596&height=1400&small_header=false&hide_cover=false&show_facepile=true"
-    width="100%"
-    height="1400"
-    style="border:none;overflow:hidden;"
-    scrolling="no"
-    frameborder="0"
-    allowfullscreen="true"
-    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-  </iframe>
-</main>
+<div class="container">
 
-<footer>Feed powered by the official Facebook Page Plugin — content belongs to SME Entrepreneurship Melaka.</footer>
+<!-- LEFT -->
+
+<div class="card">
+
+<h3>Upcoming Event</h3>
+
+<img src="promotion.jpg">
+
+<div class="content">
+
+<p>
+
+Platinum Business Awards 2026
+
+</p>
+
+</div>
+
+</div>
+
+<!-- MIDDLE -->
+
+<div class="card feed">
+
+<h3>Latest Updates</h3>
+
+<iframe
+src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fp%2FSME-Entrepreneurship-Melaka-61584066234675%2F&tabs=timeline&width=700&height=1300&small_header=false&hide_cover=false&show_facepile=true&adapt_container_width=true">
+</iframe>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="card">
+
+<h3>Advertisement</h3>
+
+<img src="advertisement.jpg">
+
+<div class="content">
+
+<p>
+
+Promote your business with SME Entrepreneurship Melaka.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+© SME Entrepreneurship Melaka
+
+</footer>
 
 </body>
+
 </html>
