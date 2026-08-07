@@ -1,164 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>SME Entrepreneurship Melaka - Latest Updates</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
 <style>
-
-
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
     font-family:'Inter',sans-serif;
     background:#f5f6f8;
     color:#222;
 }
-
 /* ================= HEADER ================= */
-
 header{
     background:linear-gradient(135deg,#081729,#0f2540);
     color:white;
     padding:45px 20px;
+    text-align:center;
 }
-
-.header-container{
-    max-width:1280px;
-    margin:auto;
-}
-
 header h1{
     font-family:'Space Grotesk',sans-serif;
     font-size:38px;
     margin-bottom:10px;
 }
-
 header p{
     max-width:700px;
     line-height:1.7;
     color:#d9e2ef;
+    margin:0 auto;
 }
-
 /* ================= MAIN ================= */
-
 main{
-    max-width:1280px;
+    max-width:600px;
     margin:40px auto;
     padding:0 20px;
+    text-align:center;
 }
-
-.feed-box{
-    background:white;
-    border:1px solid #e6e6e6;
-    border-radius:8px;
-    padding:20px;
-}
-
 .feed-title{
     font-family:'Space Grotesk',sans-serif;
-    font-size:30px;
+    font-size:28px;
     margin-bottom:25px;
     position:relative;
 }
-
 .feed-title::after{
     content:"";
-    width:95px;
+    width:80px;
     height:3px;
     background:#d62828;
     display:block;
-    margin-top:10px;
+    margin:10px auto 0;
 }
-
-/* ================= FACEBOOK ================= */
-
+/* ================= FACEBOOK PLUGIN ================= */
+.facebook-feed{
+    display:flex;
+    justify-content:center;
+}
 .facebook-feed iframe{
     width:100%;
-    height:5000px;
+    max-width:600px;
+    height:1200px;
     border:none;
     display:block;
 }
-
 /* ================= FOOTER ================= */
-
 footer{
     text-align:center;
     color:#777;
     font-size:13px;
     padding:30px;
 }
-
-@media(max-width:1000px){
-
-header h1{
-    font-size:30px;
-}
-
-.feed-title{
-    font-size:24px;
-}
-
-.facebook-feed iframe{
-    height:7000px;
-}
-
-}
-
 </style>
-
 </head>
-
 <body>
-
 <header>
-
-<div class="header-container">
-
-<h1>SME Entrepreneurship Melaka</h1>
-
-<p>
-Stay updated with the latest news, events, workshops and announcements from
-SME Entrepreneurship Melaka through our official Facebook page.
-</p>
-
-</div>
-
+    <h1>SME Entrepreneurship Melaka</h1>
+    <p>
+        Stay updated with the latest news, events, workshops and announcements from
+        SME Entrepreneurship Melaka through our official Facebook page.
+    </p>
 </header>
-
 <main>
+    <h2 class="feed-title">Latest Updates</h2>
 
-<div class="feed-box">
-
-<h2 class="feed-title">
-Latest Updates
-</h2>
-
-<div class="facebook-feed">
-
-<iframe
-src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fp%2FSME-Entrepreneurship-Melaka-61584066234675%2F&tabs=timeline&width=1200&height=5000&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
-allowfullscreen="true"
-allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-</iframe>
-
-</div>
-
-</div>
-
+    <div class="facebook-feed">
+        <iframe
+            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fp%2FSME-Entrepreneurship-Melaka-61584066234675%2F&tabs=timeline&width=600&height=1200&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+            allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+        </iframe>
+    </div>
 </main>
-
 <footer>
-
-Feed powered by the official Facebook Page Plugin — Content belongs to SME Entrepreneurship Melaka.
-
+    © SME Entrepreneurship Melaka
 </footer>
-
 </body>
-
 </html>
