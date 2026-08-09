@@ -73,17 +73,16 @@ main {
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
-    overflow: hidden; /* clips anything that spills past this fixed width */
+    overflow: hidden; /* extra safety net in case any sliver remains */
 }
 /*
    Facebook Plugin
-   The wrapper above is locked to 600px (Facebook's own declared width)
-   with overflow:hidden. The iframe below is made wider than that,
-   so its extra width -- and the scrollbar sitting on its edge --
-   spills past the wrapper's right boundary and gets clipped off.
+   scrolling="no" on the iframe tag itself suppresses its native
+   scrollbar directly, since the plugin's timeline height can exceed
+   the declared height=700 and would otherwise trigger one.
 */
 .facebook-feed iframe {
-    width: calc(100% + 30px);
+    width: 100%;
     height: 700px;
     border: none;
     display: block;
@@ -145,6 +144,7 @@ footer {
         <iframe
             src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fp%2FSME-Entrepreneurship-Melaka-61584066234675%2F&tabs=timeline&width=600&height=700&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
             allowfullscreen="true"
+            scrolling="no"
             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
         </iframe>
     </div>
