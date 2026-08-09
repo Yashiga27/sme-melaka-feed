@@ -69,17 +69,9 @@ main {
 /* =========================
    FACEBOOK FEED
 ========================= */
-.facebook-feed {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-.facebook-feed iframe {
-    width: 100%;
+.facebook-feed-wrapper {
     max-width: 600px;
-    height: 700px;
-    border: none;
-    display: block;
+    margin: 0 auto;
 }
 /* =========================
    FOOTER
@@ -131,12 +123,10 @@ footer {
     <h2 class="feed-title">
         Latest Updates
     </h2>
-    <div class="facebook-feed">
-        <iframe
-            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fp%2FSME-Entrepreneurship-Melaka-61584066234675%2F&tabs=timeline&width=600&height=700&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
-            allowfullscreen="true"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-        </iframe>
+    <!-- SociableKit Facebook Feed -->
+    <div class="facebook-feed-wrapper">
+        <div class="sk-ww-facebook-page-posts" data-embed-id="25703895"></div>
+        <script src="https://widgets.sociablekit.com/facebook-page-posts/widget.js" defer></script>
     </div>
 </main>
 <!-- =========================
