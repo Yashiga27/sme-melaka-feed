@@ -71,24 +71,22 @@ main {
 ========================= */
 .facebook-feed {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    overflow: hidden; /* crops anything that sticks out, incl. the scrollbar */
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden; /* clips anything that spills past this fixed width */
 }
 /*
    Facebook Plugin
-   The iframe is made slightly wider than its visible container,
-   then pulled back with a negative right margin. This pushes the
-   plugin's internal scrollbar past the visible edge, where the
-   overflow:hidden on the wrapper clips it off.
+   The wrapper above is locked to 600px (Facebook's own declared width)
+   with overflow:hidden. The iframe below is made wider than that,
+   so its extra width -- and the scrollbar sitting on its edge --
+   spills past the wrapper's right boundary and gets clipped off.
 */
 .facebook-feed iframe {
-    width: calc(100% + 20px);
-    max-width: 620px;
+    width: calc(100% + 30px);
     height: 700px;
     border: none;
     display: block;
-    margin-right: -20px;
 }
 /* =========================
    FOOTER
@@ -121,8 +119,6 @@ footer {
     }
     .facebook-feed iframe {
         height: 700px;
-        max-width: 620px;
-        margin-right: -20px;
     }
 }
 </style>
