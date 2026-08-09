@@ -3,92 +3,204 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>SME Entrepreneurship Melaka - Latest Updates</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{
-    font-family:'Inter',sans-serif;
-    background:#f5f6f8;
-    color:#222;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-header{
-    background:linear-gradient(135deg,#081729,#0f2540);
-    color:white;
-    padding:45px 20px;
-    text-align:center;
+
+html {
+    scroll-behavior: smooth;
 }
-header h1{
-    font-family:'Space Grotesk',sans-serif;
-    font-size:38px;
-    margin-bottom:10px;
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f6f8;
+    color: #222;
 }
-header p{
-    max-width:700px;
-    line-height:1.7;
-    color:#d9e2ef;
-    margin:0 auto;
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: linear-gradient(135deg, #081729, #0f2540);
+    color: white;
+    padding: 45px 20px;
+    text-align: center;
 }
-main{
-    max-width:600px;
-    margin:40px auto;
-    padding:0 20px;
-    text-align:center;
+
+header h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 38px;
+    margin-bottom: 10px;
 }
-.feed-title{
-    font-family:'Space Grotesk',sans-serif;
-    font-size:28px;
-    margin-bottom:25px;
-    position:relative;
+
+header p {
+    max-width: 700px;
+    line-height: 1.7;
+    color: #d9e2ef;
+    margin: 0 auto;
 }
-.feed-title::after{
-    content:"";
-    width:80px;
-    height:3px;
-    background:#d62828;
-    display:block;
-    margin:10px auto 0;
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
-.facebook-feed{
-    display:flex;
-    justify-content:center;
+
+/* =========================
+   TITLE
+========================= */
+
+.feed-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
 }
-.facebook-feed iframe{
-    width:100%;
-    max-width:600px;
-    height:4000px;
-    border:none;
-    display:block;
+
+.feed-title::after {
+    content: "";
+    width: 80px;
+    height: 3px;
+    background: #d62828;
+    display: block;
+    margin: 10px auto 0;
 }
-footer{
-    text-align:center;
-    color:#777;
-    font-size:13px;
-    padding:30px;
+
+/* =========================
+   FACEBOOK FEED
+========================= */
+
+.facebook-feed {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
+
+/*
+   Facebook Plugin
+   Keep the iframe at a reasonable height.
+*/
+
+.facebook-feed iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 700px;
+    border: none;
+    display: block;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    color: #777;
+    font-size: 13px;
+    padding: 30px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    header {
+        padding: 35px 20px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    main {
+        margin: 30px auto;
+        padding: 0 12px;
+    }
+
+    .feed-title {
+        font-size: 24px;
+    }
+
+    .facebook-feed iframe {
+        height: 700px;
+    }
+}
+
 </style>
 </head>
+
 <body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
+
     <h1>SME Entrepreneurship Melaka</h1>
+
     <p>
         Stay updated with the latest news, events, workshops and announcements from
         SME Entrepreneurship Melaka through our official Facebook page.
     </p>
+
 </header>
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
 <main>
-    <h2 class="feed-title">Latest Updates</h2>
+
+    <h2 class="feed-title">
+        Latest Updates
+    </h2>
+
     <div class="facebook-feed">
+
         <iframe
-            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fp%2FSME-Entrepreneurship-Melaka-61584066234675%2F&tabs=timeline&width=600&height=4000&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fp%2FSME-Entrepreneurship-Melaka-61584066234675%2F&tabs=timeline&width=600&height=700&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
             allowfullscreen="true"
             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
         </iframe>
+
     </div>
+
 </main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
+
     © SME Entrepreneurship Melaka
+
 </footer>
+
 </body>
 </html>
